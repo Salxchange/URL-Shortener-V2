@@ -16,21 +16,21 @@ def is_enabled(value, default):
 
 # Mandatory variables for the bot to start
 # API ID from https://my.telegram.org/auth
-API_ID = int(os.environ.get("API_ID"))
+API_ID = int(os.environ.get("API_ID", "23941369"))
 # API Hash from https://my.telegram.org/auth
-API_HASH = os.environ.get("API_HASH")
-BOT_TOKEN = os.environ.get("BOT_TOKEN")  # Bot token from @BotFather
+API_HASH = os.environ.get("API_HASH", "bbd37235e41a95d03bc144ea6bc7b2cd")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5850086580:AAGXhVLg-c-c0cNgUIROb-BsTbKyd5-rnEc")  # Bot token from @BotFather
 ADMINS = (
-    [int(i.strip()) for i in os.environ.get("ADMINS").split(",")]
+    [int(i.strip()) for i in os.environ.get("ADMINS", "6770034949, 6907125255, 5776124445, 1966867320").split(",")]
     if os.environ.get("ADMINS")
     else []
 )
 
-DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "Test")
 DATABASE_URL = os.environ.get(
-    "DATABASE_URL", None
+    "DATABASE_URL", "mongodb+srv://RENGOKU:RENGOKU@cluster0.7hxd4zs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 )  # mongodb uri from https://www.mongodb.com/
-OWNER_ID = int(os.environ.get("OWNER_ID"))  # id of the owner
+OWNER_ID = int(os.environ.get("OWNER_ID", "1966867320"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
